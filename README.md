@@ -47,3 +47,9 @@ edit the crontab to run the script at the boot
 ```
 @reboot nohup ~/SEPLOS_MQTT/run_bms_query.sh &
 ```
+
+wher the script run it send an mqtt message like this:
+```
+homeassistant/sensor/seplos_364715398511 {"lowest_cell":"Cell 8 - 3427 mV","highest_cell":"Cell 7 - 3435 mV","difference":"8","cell01":"3431","cell02":"3431","cell03":"3434","cell04":"3430","cell05":"3433","cell06":"3432","cell07":"3435","cell08":"3427","cell09":"3431","cell10":"3428","cell11":"3433","cell12":"3433","cell13":"3435","cell14":"3431","cell15":"3435","cell16":"3428","cell_temp1":"31.7","cell_temp2":"32.2","cell_temp3":"32.0","cell_temp4":"31.9","env_temp":"37.2","power_temp":"34.9","charge_discharge":"26.01","total_voltage":"54.90","residual_capacity":"271.24","soc":"96.8","cycles":"12","soh":"100.0","port_voltage":"54.93"}```
+
+based on this message then create all MQTT sensors using the configuration.yaml file and add all sensors to the Home Assistant dashboard using the lovelace.yaml file
