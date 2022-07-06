@@ -55,6 +55,49 @@ edit the crontab to run the script at the boot
 ```
 @reboot nohup ~/SEPLOS_MQTT/run_bms_query.sh &
 ```
+## Manual execution
+simply run 
+```~/SEPLOS_MQTT/run_bms_query.sh```
+or
+```nohup ~/SEPLOS_MQTT/run_bms_query.sh &```
+
+To test if the communication is working try to run
+```~/SEPLOS_MQTT/query_seplos_ha.sh 4201```
+
+you can see the output like this:
+```
+3334
+3334
+3334
+3335
+3334
+3335
+3334
+3335
+3335
+3336
+3335
+3335
+3335
+3335
+3335
+3334
+31.7
+32.2
+32.0
+31.8
+36.5
+33.7
+0
+53.35
+273.97
+280.00
+97.8
+280.00
+12
+100.0
+54.45
+```
 
 When the script run, it sends an MQTT message like this:
 
