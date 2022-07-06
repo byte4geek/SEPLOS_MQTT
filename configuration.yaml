@@ -1,0 +1,331 @@
+# MQTT
+sensor:
+  - platform: mqtt
+    name: "BMS Cell 01"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell01"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell01_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 02"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell02"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell02_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 03"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell03"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell03_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 04"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell04"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell04_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 05"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell05"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell05_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 06"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell06"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell06_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 07"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell07"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell07_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 08"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell08"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell08_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 09"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell09"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell09_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 10"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell10"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell10_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 11"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell11"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell11_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 12"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell12"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell12_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 13"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell13"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell13_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 14"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell14"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell14_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 15"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell15"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell15_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell 16"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell16"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_cell16_364715398511"
+    icon: mdi:car-battery
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Lowest Cell "
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["lowest_cell"] }}'
+    unique_id: "seplos_lowest_cell_364715398511"
+    icon: mdi:car-battery
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Highest Cell "
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["highest_cell"] }}'
+    unique_id: "seplos_highest_cell_364715398511"
+    icon: mdi:car-battery
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Difference"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["difference"] }}'
+    unit_of_measurement: "mV"
+    unique_id: "seplos_difference_364715398511"
+    icon: mdi:vector-difference
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell Temp 1"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell_temp1"] }}'
+    unit_of_measurement: "°C"
+    unique_id: "seplos_cell_temp1_364715398511"
+    device_class: temperature
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell Temp 2"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell_temp2"] }}'
+    unit_of_measurement: "°C"
+    unique_id: "seplos_cell_temp2_364715398511"
+    device_class: temperature
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell Temp 3"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell_temp3"] }}'
+    unit_of_measurement: "°C"
+    unique_id: "seplos_cell_temp3_364715398511"
+    device_class: temperature
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cell Temp 4"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cell_temp4"] }}'
+    unit_of_measurement: "°C"
+    unique_id: "seplos_cell_temp4_364715398511"
+    device_class: temperature
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Env Temp"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["env_temp"] }}'
+    unit_of_measurement: "°C"
+    unique_id: "seplos_env_temp_364715398511"
+    device_class: temperature
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Power Temp"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["power_temp"] }}'
+    unit_of_measurement: "°C"
+    unique_id: "seplos_power_temp_364715398511"
+    device_class: temperature
+    expire_after: 600
+
+  - platform: mqtt
+    name: "BMS Charge Discharge"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["charge_discharge"] }}'
+    unit_of_measurement: "A"
+    unique_id: "seplos_charge_discharge_364715398511"
+    device_class: current
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Total Voltage"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["total_voltage"] }}'
+    unit_of_measurement: "V"
+    unique_id: "seplos_total_voltage_364715398511"
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Residual Capacity"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["residual_capacity"] }}'
+    unit_of_measurement: "Ah"
+    unique_id: "seplos_residual_capacity_364715398511"
+    icon: mdi:alpha-a-box
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS SOC"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["soc"] }}'
+    unit_of_measurement: "%"
+    unique_id: "seplos_soc_364715398511"
+    icon: mdi:battery-high
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS SOH"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["soh"] }}'
+    unit_of_measurement: "%"
+    unique_id: "seplos_soh_364715398511"
+    icon: mdi:percent-box
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Cycles"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["cycles"] }}'
+    unique_id: "seplos_cycles_364715398511"
+    icon: mdi:counter
+    expire_after: 600
+    
+  - platform: mqtt
+    name: "BMS Port Voltage"
+    state_topic: "homeassistant/sensor/seplos_364715398511"
+    value_template: '{{ value_json["port_voltage"] }}'
+    unit_of_measurement: "V"
+    unique_id: "seplos_port_voltage_364715398511"
+    device_class: voltage
+    expire_after: 600
+    
+  - platform: template
+    sensors:
+      bms_residual_capacity_kwh:
+        friendly_name: "BMS Residual Capacity(Kwh)"
+        value_template: "{{(((states('sensor.bms_residual_capacity')| float(0) * states('sensor.bms_total_voltage')| float(0))) | round(3)| float * 0.001) | round(3) }}"
+        unit_of_measurement: "Kwh"
+        device_class: power
+#        icon: mdi:home-battery
+        unique_id: "bmsresidual_capacity_kw999"
+        
+  - platform: template
+    sensors:
+      bms_seplos_battery_status:
+        friendly_name: 'BMS Battery Status'
+#        icon_template: mdi:information-outline
+        unique_id: 'bmsseplosstatus66'
+        value_template: >
+           {% set status = states('sensor.bms_charge_discharge') | float(0) %}
+           {% if status > 0 %}
+             Charging
+           {% elif status < 0 %}
+             Discharge
+           {% elif status == 0 %}
+             Standby
+           {% else %}
+             N/A
+           {% endif %}
