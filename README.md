@@ -15,7 +15,7 @@ move to the your user home and use git clone to download this script
 
 ```git clone https://github.com/byte4geek/Seplos-BMS-vs-Home-Assistant.git```
 
-edit the script ```~/SEPLOS_MQTT/query_seplos_ha.sh``` and set the COM port that you use (Ex. /dev/ttyUSB0)
+edit the script ```~/SEPLOS_MQTT/query_seplos_ha.sh``` and set the COM port that you use (Ex. DEV=/dev/ttyUSB0)
 
 edit the script ```~/SEPLOS_MQTT/run_bms_query.sh``` and set the below parameters with your MQTT server information:
 
