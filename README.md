@@ -16,7 +16,7 @@ perform the apt-get update and the apt-get upgrade
 move to the your user home and use git clone to download this script
 
 ```
-git clone https://github.com/byte4geek/Seplos-BMS-vs-Home-Assistant.git
+git clone https://github.com/byte4geek/SEPLOS_MQTT.git
 
 ```
 
