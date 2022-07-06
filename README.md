@@ -18,6 +18,7 @@ move to the your user home and use git clone to download this script
 ```
 git clone https://github.com/byte4geek/SEPLOS_MQTT.git
 
+chmod 700 ~/SEPLOS_MQTT/query_seplos_ha.sh ~/SEPLOS_MQTT/run_bms_query.sh
 ```
 
 edit the script ```~/SEPLOS_MQTT/query_seplos_ha.sh``` and set the COM port that you use (Ex. DEV=/dev/ttyUSB0)
