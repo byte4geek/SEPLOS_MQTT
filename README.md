@@ -1,4 +1,4 @@
-# Seplos-BMS-vs-Home-Assistant
+# Seplos MQTT
 Read data From Seplos BMS and send them to the Home Assistant
 
 This is a bash script that read data from Seplos BMS via RS485 port and send the data to the Home Assistan via MQTT.
