@@ -61,3 +61,7 @@ homeassistant/sensor/seplos_364715398511 {"lowest_cell":"Cell 8 - 3427 mV","high
 ## Configuring Home Assistant
 
 Based on the MQTT message then create all MQTT sensors and the template sensors using the configuration.yaml file and add all sensors to the Home Assistant dashboard using the lovelace.yaml file
+
+example:
+![BMS dashboard](https://github.com/byte4geek/Seplos-BMS-vs-Home-Assistant/raw/main/bms_ha_panel.JPG)
+
