@@ -39,7 +39,9 @@ MAXSIZE=2000000
 
 then install the following pkg:
 
+```
 sudo apt-get install jq mosquitto-clients
+```
 
 edit the crontab to run the script at the boot
 
