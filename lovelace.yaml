@@ -1,0 +1,101 @@
+resources: null
+title: BMS Dashboard
+views:
+  - theme: Backend-selected
+    title: 2BSS_SEPLOS
+    path: bss-seplos
+    icon: mdi:home-battery-outline
+    badges: []
+    cards:
+      - square: false
+        columns: 3
+        type: grid
+        cards:
+          - type: gauge
+            entity: sensor.bms_charge_discharge
+            max: 120
+            min: -120
+            name: Charge/Discharge
+            needle: true
+            severity:
+              green: 1
+              yellow: 0
+              red: -120
+          - type: gauge
+            entity: sensor.bms_soc
+            name: SOC
+            min: 0
+            max: 100
+            severity:
+              green: 70
+              yellow: 30
+              red: 0
+            needle: true
+          - type: gauge
+            entity: sensor.bms_soh
+            name: SOH
+            min: 0
+            max: 100
+            severity:
+              green: 70
+              yellow: 30
+              red: 0
+            needle: true
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.bms_lowest_cell
+          - entity: sensor.bms_difference
+          - entity: sensor.bms_highest_cell
+          - entity: sensor.bms_residual_capacity_kw
+          - entity: sensor.bms_seplos_battery_status
+        columns: 3
+        state_color: false
+        title: Seplos Battery Overview
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.bms_cell_01
+          - entity: sensor.bms_cell_02
+          - entity: sensor.bms_cell_03
+          - entity: sensor.bms_cell_04
+          - entity: sensor.bms_cell_05
+          - entity: sensor.bms_cell_06
+          - entity: sensor.bms_cell_07
+          - entity: sensor.bms_cell_08
+          - entity: sensor.bms_cell_09
+          - entity: sensor.bms_cell_10
+          - entity: sensor.bms_cell_11
+          - entity: sensor.bms_cell_12
+          - entity: sensor.bms_cell_13
+          - entity: sensor.bms_cell_14
+          - entity: sensor.bms_cell_15
+          - entity: sensor.bms_cell_16
+        state_color: false
+        columns: 4
+        title: Cells Voltage
+      - type: entities
+        entities:
+          - entity: sensor.bms_cell_temp_1
+            secondary_info: last-updated
+          - entity: sensor.bms_cell_temp_2
+          - entity: sensor.bms_cell_temp_3
+          - entity: sensor.bms_cell_temp_4
+          - entity: sensor.bms_env_temp
+            secondary_info: last-updated
+          - entity: sensor.bms_power_temp
+          - entity: sensor.bms_charge_discharge
+            secondary_info: last-updated
+          - entity: sensor.bms_total_voltage
+            secondary_info: last-updated
+          - entity: sensor.bms_residual_capacity
+            secondary_info: last-updated
+          - entity: sensor.bms_soc
+          - entity: sensor.bms_cycles
+          - entity: sensor.bms_soh
+          - entity: sensor.bms_port_voltage
+        title: Other Sensors
