@@ -5,9 +5,9 @@ MQTTHOST=192.168.1.2
 # name inserted into topic
 TOPIC=seplos
 # mqtt user name
-MQTTUSER=your_mqtt_user
+MQTTUSER=mqttuser
 # mqtt password
-MQTTPASWD=your_mqtt_password
+MQTTPASWD=8pa553r8
 # time to read and update datas vs mqtt server and Home Assistant
 TELEPERIOD=10
 # is a prefix inserted into topic, chage it if you need
@@ -88,7 +88,11 @@ VAR="$(echo $QUERY|awk '{print $27}')"
 # prepare MQTT argument
 mqtt_argument=$(printf "{\
 \"lowest_cell\":\"Cell $lowcellnumb - $lowcell mV\",\
+\"lowest_cell_v\":\"$lowcell\",\
+\"lowest_cell_n\":\"$lowcellnumb\",\
 \"highest_cell\":\"Cell $highcellnumb - $highcell mV\",\
+\"highest_cell_v\":\"$highcell\",\
+\"highest_cell_n\":\"$highcellnumb\",\
 \"difference\":\"$DIFF\",\
 \"cell01\":\"$(echo $QUERY|awk '{print $1}')\",\
 \"cell02\":\"$(echo $QUERY|awk '{print $2}')\",\
