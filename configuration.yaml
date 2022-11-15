@@ -175,18 +175,48 @@ mqtt:
       device_class: voltage
       expire_after: 600
       
-    - name: "BMS Lowest Cell "
+#    - name: "BMS Lowest Cell"
+#      state_topic: "homeassistant/sensor/seplos_364715398511"
+#      value_template: '{{ value_json["lowest_cell"] }}'
+#      unique_id: "seplos_lowest_cell_364715398511"
+#      icon: mdi:car-battery
+#      expire_after: 600
+      
+    - name: "BMS Lowest Cell V"
       state_topic: "homeassistant/sensor/seplos_364715398511"
-      value_template: '{{ value_json["lowest_cell"] }}'
-      unique_id: "seplos_lowest_cell_364715398511"
+      value_template: '{{ value_json["lowest_cell_v"] }}'
+      unique_id: "seplos_lowest_cell_V_364715398511"
+      unit_of_measurement: "mV"
       icon: mdi:car-battery
       expire_after: 600
       
-    - name: "BMS Highest Cell "
+    - name: "BMS Lowest Cell N"
       state_topic: "homeassistant/sensor/seplos_364715398511"
-      value_template: '{{ value_json["highest_cell"] }}'
-      unique_id: "seplos_highest_cell_364715398511"
+      value_template: '{{ value_json["lowest_cell_n"] }}'
+      unique_id: "seplos_lowest_cell_N_364715398511"
+      icon: mdi:battery-outline
+      expire_after: 600
+      
+#    - name: "BMS Highest Cell"
+#      state_topic: "homeassistant/sensor/seplos_364715398511"
+#      value_template: '{{ value_json["highest_cell"] }}'
+#      unique_id: "seplos_highest_cell_364715398511"
+#      icon: mdi:car-battery
+#      expire_after: 600
+      
+    - name: "BMS Highest Cell V"
+      state_topic: "homeassistant/sensor/seplos_364715398511"
+      value_template: '{{ value_json["highest_cell_v"] }}'
+      unique_id: "seplos_highest_cell_V_364715398511"
+      unit_of_measurement: "mV"
       icon: mdi:car-battery
+      expire_after: 600
+      
+    - name: "BMS Highest Cell N"
+      state_topic: "homeassistant/sensor/seplos_364715398511"
+      value_template: '{{ value_json["highest_cell_n"] }}'
+      unique_id: "seplos_highest_cell_N_364715398511"
+      icon: mdi:battery-outline
       expire_after: 600
       
     - name: "BMS Difference"
