@@ -1,5 +1,5 @@
 #!/bin/bash
-# insert the mqtt info below
+# insert the mqtt infos below
 # mqtt host name
 MQTTHOST=192.168.1.2
 # name inserted into topic
