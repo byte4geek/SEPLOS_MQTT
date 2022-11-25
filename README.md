@@ -6,7 +6,8 @@ This is a bash script that read data from Seplos BMS via RS485 port and send the
 ## Hardware requirements:
 1. Raspberry (i use an RPI4)
 2. USB to RS485 adapter
-3. Home assitant with MQTT broker
+3. [Seplos BMS](https://www.alibaba.com/product-detail/Seplos-50A-100A-150A-200A-24V_1600246972725.html?spm=a2700.galleryofferlist.normal_offer.d_title.41f63a936kcnil)
+4. Home assitant with configured MQTT broker
 
 ## Installation and configuration
 
