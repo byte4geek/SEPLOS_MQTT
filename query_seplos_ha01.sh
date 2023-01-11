@@ -123,7 +123,7 @@ SUM="${SUM:0-4:4}"
 SUM=$((0x$SUM + 1))
 SUM=$(printf "%04X" $SUM)
 SUM="${SUM:0-4:4}"
-SEND="~$SEND$SUM\r\n"
+SEND="~$SEND$SUM\r"
 #echo "Sending \"$SEND\""
 read_serdata &
 sleep 0.2
