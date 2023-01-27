@@ -54,7 +54,7 @@ do
     cat /dev/null > "$NOUPFILE"
   fi
 
-   QUERY=$(cat battery_status)
+   QUERY=$(~/SEPLOS_MQTT/query_seplos_ha.sh 4201)
  
 # Find lowest and high value
                onlycells=$(echo $QUERY|awk '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16}')
