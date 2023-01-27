@@ -24,7 +24,7 @@ chmod 700 ~/SEPLOS_MQTT/query_seplos_ha.sh ~/SEPLOS_MQTT/run_bms_query.sh
 
 edit the script ```~/SEPLOS_MQTT/query_seplos_ha.sh``` and set the COM port that you use (Ex. DEV=/dev/ttyUSB0)
 
-edit the script ```~/SEPLOS_MQTT/run_bms_query.sh``` and set the below parameters with your MQTT server information:
+edit the file config.ini ```~/SEPLOS_MQTT/config.ini``` and set the below parameters with your MQTT server information:
 
 ```
 # insert the mqtt info below
@@ -42,6 +42,10 @@ TELEPERIOD=10
 id_prefix=364715398511
 # Max size of the BMS_error.log and nohup.out
 MAXSIZE=2000000
+# Minmum voltage in mV permitted for Cell value for correct output
+CELL_MIN_VOLT=2500
+# Maximum voltage in mV permitted for Cell value for correct output
+CELL_MAX_VOLT=3800
 ```
 
 then install the following pkg:
