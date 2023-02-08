@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Config parameter Load
-MQTTHOST=$(grep "MQTTHOST" config.ini | awk -F "=" '{print $2}')
-TOPIC=$(grep "TOPIC" config.ini | awk -F "=" '{print $2}')
-MQTTUSER=$(grep "MQTTUSER" config.ini | awk -F "=" '{print $2}')
-MQTTPASWD=$(grep "MQTTPASWD" config.ini | awk -F "=" '{print $2}')
-TELEPERIOD=$(grep "TELEPERIOD" config.ini | awk -F "=" '{print $2}')
-id_prefix=$(grep "id_prefix" config.ini | awk -F "=" '{print $2}')
-MAXSIZE=$(grep "MAXSIZE" config.ini | awk -F "=" '{print $2}')
-CELL_MIN_VOLT=$(grep "CELL_MIN_VOLT" config.ini | awk -F "=" '{print $2}')
-CELL_MAX_VOLT=$(grep "CELL_MAX_VOLT" config.ini | awk -F "=" '{print $2}')
+MQTTHOST=$(grep "MQTTHOST" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+TOPIC=$(grep "TOPIC" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+MQTTUSER=$(grep "MQTTUSER" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+MQTTPASWD=$(grep "MQTTPASWD" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+TELEPERIOD=$(grep "TELEPERIOD" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+id_prefix=$(grep "id_prefix" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+MAXSIZE=$(grep "MAXSIZE" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+CELL_MIN_VOLT=$(grep "CELL_MIN_VOLT" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
+CELL_MAX_VOLT=$(grep "CELL_MAX_VOLT" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
 
 # The function....
 
@@ -29,10 +29,9 @@ checkcellsvoltage()
 }
 
 # The main script....
-
-LOGNAME=~/test/BMS_error.log
-NOUPFILE=~/test/nohup.out
-
+LOGNAME=~/SEPLOS_MQTT/BMS_error.log
+NOUPFILE=~/SEPLOS_MQTT/nohup.out
+cd ~/SEPLOS_MQTT/
 if [ ! -f "$LOGNAME" ]; then
 touch "$LOGNAME"
 fi
@@ -160,3 +159,4 @@ mqtt_argument=$(printf "{\
 	fi
 	sleep $TELEPERIOD
 done
+
