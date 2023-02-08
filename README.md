@@ -58,7 +58,7 @@ edit the crontab to run the script at the boot
 
 ```crontab -e``` and add the line below:
 ```
-@reboot nohup ~/SEPLOS_MQTT/run_bms_query.sh &
+@reboot cd ~/SEPLOS_MQTT/| nohup /home/pi/SEPLOS_MQTT/run_bms_query.sh &
 ```
 ## Manual execution
 simply run 
