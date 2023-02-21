@@ -166,10 +166,9 @@ then create an automation to start the script at Home assistant boot
 - id: seplos_startup_automation
   alias: Seplos Startup Automation
   trigger:
-    platform: homeassistant
-    event: start
+    platform: time_pattern
+    seconds: "/10"
   action:
-    - delay: '00:02:00'
     - service: shell_command.seplos_query
 ```
 
