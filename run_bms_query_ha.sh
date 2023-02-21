@@ -40,8 +40,8 @@ if [ ! -f "$NOUPFILE" ]; then
 touch "$NOUPFILE"
 fi
 
-for (( ; ; ))
-do
+#for (( ; ; ))
+#do
   LOGNAME_SIZE=$(ls -l "$LOGNAME" | awk '{print $5}')
   if [ $LOGNAME_SIZE -ge $MAXSIZE ]; then
     mv "$LOGNAME" "$LOGNAME".old
@@ -157,5 +157,5 @@ mqtt_argument=$(printf "{\
 
                 fi
         fi
-        sleep $TELEPERIOD
-done
+#        sleep $TELEPERIOD
+#done
