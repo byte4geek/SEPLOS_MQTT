@@ -60,6 +60,7 @@ edit the crontab to run the script at the boot
 ```
 @reboot cd ~/SEPLOS_MQTT/| nohup /home/pi/SEPLOS_MQTT/run_bms_query.sh &
 ```
+
 ## Manual execution
 simply run 
 ```~/SEPLOS_MQTT/run_bms_query.sh```
@@ -108,6 +109,68 @@ When the script run, it sends an MQTT message like this:
 
 ```
 homeassistant/sensor/seplos_364715398511 {"lowest_cell":"Cell 8 - 3427 mV","highest_cell":"Cell 7 - 3435 mV","difference":"8","cell01":"3431","cell02":"3431","cell03":"3434","cell04":"3430","cell05":"3433","cell06":"3432","cell07":"3435","cell08":"3427","cell09":"3431","cell10":"3428","cell11":"3433","cell12":"3433","cell13":"3435","cell14":"3431","cell15":"3435","cell16":"3428","cell_temp1":"31.7","cell_temp2":"32.2","cell_temp3":"32.0","cell_temp4":"31.9","env_temp":"37.2","power_temp":"34.9","charge_discharge":"26.01","total_voltage":"54.90","residual_capacity":"271.24","soc":"96.8","cycles":"12","soh":"100.0","port_voltage":"54.93"}
+```
+
+## Installation and configuration for Home Assistant only
+
+This section describe the installation and configuration for people that have the rs485 directly connecte to the Home Assistant Raspberry.
+Require Home Assistant Operating System
+
+install the docker "SSH & Web Terminal" https://github.com/hassio-addons/addon-ssh and configure it
+
+connect to the HA with ssh port 22
+
+```
+cd /share
+
+git clone https://github.com/byte4geek/SEPLOS_MQTT.git
+
+chmod 700 ./SEPLOS_MQTT/query_seplos_ha.sh ./SEPLOS_MQTT/run_bms_query_ha.sh
+
+ssh-copy-id root@<YOUR HA IP>     ---> and choose yes
+```
+
+edit the script ```./SEPLOS_MQTT/query_seplos_ha.sh``` and set the COM port that you use (Ex. DEV=/dev/ttyUSB0)
+
+edit the file config.ini ```./SEPLOS_MQTT/config.ini``` and set the below parameters with your MQTT server information:
+
+```
+# insert the mqtt info below
+# mqtt host name
+MQTTHOST=192.168.1.2
+# name inserted into topic
+TOPIC=seplos
+# mqtt user name
+MQTTUSER=mqttuser
+# mqtt password
+MQTTPASWD=mqttpassword
+# time to read and update datas vs mqtt server and Home Assistant
+TELEPERIOD=10
+# is a prefix inserted into topic, chage it if you need
+id_prefix=364715398511
+# Max size of the BMS_error.log and nohup.out
+MAXSIZE=2000000
+# Minmum voltage in mV permitted for Cell value for correct output
+CELL_MIN_VOLT=2500
+# Maximum voltage in mV permitted for Cell value for correct output
+CELL_MAX_VOLT=3800
+```
+
+create a shell command in HA:
+```
+seplos_query: ssh -i /config/.ssh/id_rsa -o StrictHostKeyChecking=no root@<YOUR HA IP> "cd /share/SEPLOS_MQTT;nohup /share/SEPLOS_MQTT/run_bms_query_ha.sh &"
+```
+
+then create an automation to start the script at Home assistant boot
+```
+- id: seplos_startup_automation
+  alias: Seplos Startup Automation
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - delay: '00:02:00'
+    - service: shell_command.seplos_query
 ```
 
 ## Configuring Home Assistant
