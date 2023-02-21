@@ -161,7 +161,7 @@ create a shell command in HA:
 seplos_query: ssh -i /config/.ssh/id_rsa -o StrictHostKeyChecking=no root@<YOUR HA IP> "cd /share/SEPLOS_MQTT;nohup /share/SEPLOS_MQTT/run_bms_query_ha.sh &"
 ```
 
-then create an automation to start the script at Home assistant boot
+then create an automation to run the script every 10 seconds or what you prefer
 ```
 - id: seplos_startup_automation
   alias: Seplos Startup Automation
