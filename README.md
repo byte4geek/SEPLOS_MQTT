@@ -36,7 +36,7 @@ TOPIC=seplos
 MQTTUSER=mqttuser
 # mqtt password
 MQTTPASWD=mqttpassword
-# time to read and update datas vs mqtt server and Home Assistant
+# time to read and update datas vs mqtt server and Home Assistant, not used for run_bms_query_ha.sh
 TELEPERIOD=10
 # is a prefix inserted into topic, chage it if you need
 id_prefix=364715398511
