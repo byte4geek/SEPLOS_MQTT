@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Config parameter Load
+# Load config parameters
 MQTTHOST=$(grep "MQTTHOST" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
 TOPIC=$(grep "TOPIC" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
 MQTTUSER=$(grep "MQTTUSER" ~/SEPLOS_MQTT/config.ini | awk -F "=" '{print $2}')
@@ -19,7 +19,7 @@ checkcellsvoltage()
 	 counter=1
 	 for CELLVOLTAGE in "$CELL1" "$CELL2" "$CELL3" "$CELL4" "$CELL5" "$CELL6" "$CELL7" "$CELL8" "$CELL9" "$CELL10" "$CELL11" "$CELL12" "$CELL13" "$CELL14" "$CELL15" "$CELL16"; do
 		if [ "$CELLVOLTAGE" -lt $CELL_MIN_VOLT ] || [ "$CELLVOLTAGE" -gt $CELL_MAX_VOLT ]; then
-			echo "$(date) - Error: The value $CELLVOLTAGE for cell "$counter" is not between "$CELL_MIN_VOLT" and "$CELL_MAX_VOLT"" >> $LOGNAME
+			echo "$DATE - Warning 0: The value $CELLVOLTAGE for cell "$counter" is not between "$CELL_MIN_VOLT" and "$CELL_MAX_VOLT" skip data" >> $LOGNAME
 			STATUS=1
 			break
 		fi
@@ -40,6 +40,8 @@ if [ ! -f "$NOUPFILE" ]; then
 touch "$NOUPFILE"
 fi
 
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Script started..." >> $LOGNAME
+
 for (( ; ; ))
 do
   LOGNAME_SIZE=$(ls -l "$LOGNAME" | awk '{print $5}')
@@ -53,8 +55,9 @@ do
     cat /dev/null > "$NOUPFILE"
   fi
 
-   QUERY=$(~/SEPLOS_MQTT/query_seplos_ha.sh 4201)
- 
+	QUERY=$(~/SEPLOS_MQTT/query_seplos_ha.sh 4201)
+	DATE=$(date '+%Y-%m-%d %H:%M:%S')
+	
 # Find lowest and high value
                onlycells=$(echo $QUERY|awk '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16}')
 
@@ -89,23 +92,23 @@ CELL15=$(echo $QUERY|awk '{print $15}')
 CELL16=$(echo $QUERY|awk '{print $16}')
 
 	if [[ "$onlycells" =~ "rror" ]]; then
-		echo "$(date) - Possible bad read data from BMS - Error 1" >> $LOGNAME
-#		echo "$(date) - Possible bad read data from BMS - Error 1"
+		echo "$DATE - Warning 1: Data from BMS contain 'Error' skip data" >> $LOGNAME
+#		echo "$DATE - Possible bad read data from BMS - Warning 1"
 	elif [[ "$onlycells" =~ "Failed" ]]; then
-		echo "$(date) - Possible bad read data from BMS - Error 2" >> $LOGNAME
-#		echo "$(date) - Possible bad read data from BMS - Error 2"
+		echo "$DATE - Warning 2: Data from BMS contain 'Failed' skip data" >> $LOGNAME
+#		echo "$DATE - Possible bad read data from BMS - Warning 2"
 	elif (( $(echo "$VAR"'>'100 |bc -l) )); then
-		echo "$(date) - Possible bad read data from BMS - Error 3" >> $LOGNAME
-#		echo "$(date) - Possible bad read data from BMS - Error 3"
+		echo "$DATE - Warning 3: SOC value over 100 value=$VAR skip data" >> $LOGNAME
+#		echo "$DATE - Possible bad read data from BMS - Warning 3"
 	elif (( $(echo "$VAR"'<'1 |bc -l) )); then
-		echo "$(date) - Possible bad read data from BMS - Error 4" >> $LOGNAME
-#		echo "$(date) - Possible bad read data from BMS - Error 4"
+		echo "$DATE - Warning 4: SOC Value below 1 SOC=$VAR skip data" >> $LOGNAME
+#		echo "$DATE - Possible bad read data from BMS - Warning 4"
 	elif [[ "$onlycells" =~ "~" ]]; then
-		echo "$(date) - Possible bad read data from BMS - Error 5" >> $LOGNAME
-#		echo "$(date) - Possible bad read data from BMS - Error 5"
+		echo "$DATE - Warning 5: Data from BMS contain '~' skip data" >> $LOGNAME
+#		echo "$DATE - Possible bad read data from BMS - Warning 5"
 	elif [ "${VAR+x}" = x ] && [ -z "$VAR" ]; then
-		echo "$(date) - Possible bad read data from BMS - Error 6" >> $LOGNAME
-#		echo "$(date) - Possible bad read data from BMS - Error 6"
+		echo "$DATE - Warning 6: SOC value is null skip data" >> $LOGNAME
+#		echo "$DATE - Possible bad read data from BMS - Warning 6"
 	else 
 	   
 	checkcellsvoltage
