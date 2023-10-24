@@ -127,6 +127,6 @@ SEND="~$SEND$SUM\r"
 #echo "Sending \"$SEND\""
 read_serdata &
 sleep 0.2
-echo -e "$SEND" >$DEV
+echo -ne "$SEND" >$DEV
 wait
 
